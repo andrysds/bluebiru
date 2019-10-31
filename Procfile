@@ -1,1 +1,1 @@
-web: bluebiru
+web: bin/bluebiru
