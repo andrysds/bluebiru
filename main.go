@@ -12,6 +12,8 @@ func healthz(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
+	go example()
+
 	http.HandleFunc("/healthz", healthz)
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 }
