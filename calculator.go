@@ -26,10 +26,7 @@ func runCalculatorBot() {
 
 		var msgText string
 		if update.Message.IsCommand() && update.Message.Command() == "calc" {
-			msgText, err = calculator.Calculate(update.Message.CommandArguments())
-			if err != nil {
-				msgText = err.Error()
-			}
+			msgText = calculator.Calculate(update.Message.CommandArguments())
 		}
 		bot.Send(newTextMessage(&update, msgText))
 	}
