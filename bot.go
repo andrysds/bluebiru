@@ -19,3 +19,9 @@ func botUpdatesChan(bot *tgbotapi.BotAPI) (tgbotapi.UpdatesChannel, error) {
 	u.Timeout = 60
 	return bot.GetUpdatesChan(u)
 }
+
+func newTextMessage(update *tgbotapi.Update, text string) tgbotapi.MessageConfig {
+	msg := tgbotapi.NewMessage(update.Message.Chat.ID, text)
+	msg.ReplyToMessageID = update.Message.MessageID
+	return msg
+}

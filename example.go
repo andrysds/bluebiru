@@ -7,7 +7,7 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
-func example() {
+func runExampleBot() {
 	bot, err := newBot(os.Getenv("EXAMPLE_BOT_TOKEN"))
 	if err != nil {
 		log.Println("Fail on example bot authorization:", err)
