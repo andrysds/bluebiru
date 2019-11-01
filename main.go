@@ -12,7 +12,8 @@ func healthz(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	go example()
+	go runCalculatorBot()
+	go runExampleBot()
 
 	http.HandleFunc("/healthz", healthz)
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
